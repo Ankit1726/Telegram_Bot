@@ -451,92 +451,10 @@ Future admin panel:
 
 Only authorized administrators should be able to execute these commands.
 
----
-
-# 🧪 Testing Checklist
-
-Before deployment, test:
-
-```text
-[ ] Bot starts successfully
-[ ] /start works
-[ ] /rules works
-[ ] Normal message is allowed
-[ ] Spam is detected
-[ ] Abuse is detected
-[ ] Suspicious link is detected
-[ ] Repeated messages are detected
-[ ] Warning count works
-[ ] Third violation triggers mute
-[ ] Admin messages are ignored
-[ ] New member welcome works
-[ ] Image is received
-[ ] Bot can delete messages
-[ ] Bot can restrict users
-```
 
 ---
 
-# 💻 Local Development
-
-Create virtual environment:
-
-```bash
-python -m venv venv
-```
-
-Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run:
-
-```bash
-python bot.py
-```
-
-Expected:
-
-```text
-🤖 SSC Moderation Bot started...
-🛡️ Monitoring group messages...
-```
-
----
-
-# 🛑 KeyboardInterrupt
-
-If terminal shows:
-
-```text
-KeyboardInterrupt
-```
-
-This normally means the process was manually stopped using:
-
-```text
-Ctrl + C
-```
-
-It is not necessarily a bot error.
-
-Restart:
-
-```bash
-python bot.py
-```
-
----
-
-# 📱 Telegram Integration
+### 📱 Telegram Integration
 
 Steps:
 
@@ -562,7 +480,7 @@ Run Python Bot
 
 ---
 
-# 🔐 BotFather Privacy Mode
+### 🔐 BotFather Privacy Mode
 
 For group message monitoring:
 
@@ -668,7 +586,7 @@ This reduces false positives.
 
 ---
 
-# 🖼️ Future AI Image Moderation
+### 🖼️ Future AI Image Moderation
 
 ```text
 Telegram Image
@@ -688,34 +606,7 @@ ALLOW         DELETE         DELETE/WARN
 
 ---
 
-# 📊 Future Moderation Analytics
-
-Admin dashboard could show:
-
-```text
-📊 SSC Group Statistics
-
-Total Members       : 1,250
-Messages Today      : 4,820
-Spam Deleted        : 37
-Warnings            : 21
-Muted Users         : 5
-Banned Users        : 2
-```
-
-Future charts:
-
-```text
-Messages per Day
-Spam per Day
-Warnings per Day
-Active Users
-Top Violations
-```
-
----
-
-# 🔮 Complete Future Architecture
+### 🔮 Complete Future Architecture
 
 ```text
                          TELEGRAM
