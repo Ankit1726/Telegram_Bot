@@ -1,4 +1,4 @@
-# 🤖 SSC Telegram Moderation Bot
+## 🤖 Telegram Moderation Bot
 
 A Python-based Telegram Group Moderation Bot designed for SSC preparation communities.
 
@@ -8,7 +8,7 @@ The project is designed to evolve from a simple rule-based moderation bot into a
 
 ---
 
-# 📌 Project Goal
+### 📌 Project Goal
 
 The main purpose of this bot is to keep an SSC preparation group:
 
@@ -42,7 +42,7 @@ Serious / Repeated Violations
 
 ---
 
-# 🏗️ Current Technology Stack
+### 🏗️ Current Technology Stack
 
 ```text
 Language       : Python
@@ -57,77 +57,7 @@ AI Moderation  : Future → LLM / Vision Model
 
 ---
 
-# 📁 Current Project Structure
-
-```text
-ssc-moderation-bot/
-│
-├── bot.py
-├── requirements.txt
-├── .env
-├── .gitignore
-└── README.md
-```
-
-Production/future structure:
-
-```text
-ssc-moderation-bot/
-│
-├── bot.py
-│
-├── config/
-│   └── settings.py
-│
-├── handlers/
-│   ├── start.py
-│   ├── moderation.py
-│   ├── admin.py
-│   └── user.py
-│
-├── services/
-│   ├── moderation_service.py
-│   ├── warning_service.py
-│   └── ai_service.py
-│
-├── database/
-│   ├── mongodb.py
-│   └── models.py
-│
-├── utils/
-│   ├── filters.py
-│   └── logger.py
-│
-├── requirements.txt
-├── .env
-├── .gitignore
-└── README.md
-```
-
----
-
-# 🔐 Environment Variables
-
-Create `.env`:
-
-```env
-BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
-```
-
-Never upload `.env` to GitHub.
-
-`.gitignore`:
-
-```text
-venv/
-.env
-__pycache__/
-*.pyc
-```
-
----
-
-# 🚀 How the Bot Currently Works
+### 🚀 How the Bot Currently Works
 
 Basic architecture:
 
@@ -173,7 +103,7 @@ Basic architecture:
 
 ---
 
-# 🧠 Message Processing Flow
+### 🧠 Message Processing Flow
 
 Every incoming message follows approximately this flow:
 
@@ -209,7 +139,7 @@ Decision
 
 ---
 
-# ✅ Normal Message
+### ✅ Normal Message
 
 Example:
 
@@ -230,7 +160,7 @@ No deletion.
 
 ---
 
-# 🚫 Spam Detection
+### 🚫 Spam Detection
 
 Example:
 
@@ -250,7 +180,7 @@ Warning
 
 ---
 
-# 🚫 Abusive Language
+### 🚫 Abusive Language
 
 Example:
 
@@ -270,7 +200,7 @@ Warning 1/3
 
 ---
 
-# 🔗 Link Moderation
+### 🔗 Link Moderation
 
 Current implementation can detect:
 
@@ -300,7 +230,7 @@ Do NOT permanently block every link.
 
 ---
 
-# 🔁 Repeated Message Detection
+### 🔁 Repeated Message Detection
 
 Example:
 
@@ -325,7 +255,7 @@ Warning
 
 ---
 
-# 🖼️ Image Moderation
+### 🖼️ Image Moderation
 
 Current version:
 
@@ -419,7 +349,7 @@ The bot requires Telegram administrator permissions to restrict users.
 
 ---
 
-# 👮 Admin Handling
+### 👮 Admin Handling
 
 Current design:
 
@@ -437,7 +367,7 @@ This prevents the bot from accidentally moderating group administrators.
 
 ---
 
-# 👋 New Member Handling
+### 👋 New Member Handling
 
 When a new member joins:
 
@@ -467,7 +397,7 @@ Use /rules to see the complete rules.
 
 ---
 
-# 📜 Current Commands
+### 📜 Current Commands
 
 ```text
 /start
@@ -483,7 +413,7 @@ Shows group rules.
 
 ---
 
-# 🔮 Future Admin Commands
+### 🔮 Future Admin Commands
 
 Planned:
 
@@ -654,111 +584,8 @@ After changing privacy settings, re-add the bot to the group if necessary.
 
 ---
 
-# ☁️ Deployment
 
-Local development:
-
-```text
-Your Computer
-      ↓
-Python Bot
-      ↓
-Telegram
-```
-
-Problem:
-
-```text
-Computer OFF
-     ↓
-Bot OFF
-```
-
-Therefore production deployment is required.
-
----
-
-# 🚀 Render Deployment
-
-Recommended deployment type:
-
-```text
-Render
-   ↓
-Background Worker
-```
-
-Why Background Worker?
-
-The Telegram bot continuously runs and waits for updates.
-
----
-
-# 📦 Deployment Requirements
-
-GitHub repository should contain:
-
-```text
-bot.py
-requirements.txt
-.gitignore
-README.md
-```
-
-DO NOT upload:
-
-```text
-.env
-venv/
-BOT_TOKEN
-```
-
----
-
-# requirements.txt
-
-Example:
-
-```text
-python-telegram-bot
-python-dotenv
-```
-
-Or generate:
-
-```bash
-pip freeze > requirements.txt
-```
-
----
-
-# Render Configuration
-
-Build Command:
-
-```bash
-pip install -r requirements.txt
-```
-
-Start Command:
-
-```bash
-python bot.py
-```
-
-Environment Variable:
-
-```text
-Key:
-BOT_TOKEN
-
-Value:
-YOUR_TELEGRAM_BOT_TOKEN
-```
-
----
-
-# ☁️ Production Architecture
+### ☁️ Production Architecture
 
 ```text
                     INTERNET
@@ -789,70 +616,10 @@ YOUR_TELEGRAM_BOT_TOKEN
 
 ---
 
-# 🗄️ Future MongoDB Architecture
 
-Current warning storage is in Python memory.
 
-Problem:
 
-```text
-Bot Restart
-    ↓
-Memory Cleared
-    ↓
-Warnings Lost
-```
-
-Solution:
-
-```text
-Telegram
-   ↓
-Python Bot
-   ↓
-MongoDB
-```
-
-Possible user document:
-
-```json
-{
-  "telegram_id": 123456789,
-  "username": "student123",
-  "warnings": 2,
-  "violations": 5,
-  "last_violation": "2026-10-01",
-  "status": "active"
-}
-```
-
-MongoDB will provide persistent moderation history.
-
----
-
-# 🤖 Future AI Moderation
-
-Rule-based moderation has limitations.
-
-Example:
-
-```text
-"You're stupid"
-```
-
-Easy to detect if the word exists in the bad-word list.
-
-But:
-
-```text
-"Why don't you go away from this group?"
-```
-
-requires understanding context.
-
-Future AI layer:
-
-```text
+``text
                  Message
                     ↓
              Rule-based Filter
@@ -995,92 +762,10 @@ Top Violations
 
 ---
 
-# 🛠️ Recommended Development Roadmap
-
-## Phase 1: Basic Bot
-
-```text
-[x] BotFather
-[x] Telegram Token
-[x] Python setup
-[x] /start
-[x] /rules
-```
-
-## Phase 2: Group Integration
-
-```text
-[x] Add bot to group
-[x] Make administrator
-[x] Delete Messages permission
-[x] Restrict Members permission
-[x] Group Privacy configuration
-```
-
-## Phase 3: Basic Moderation
-
-```text
-[x] Spam detection
-[x] Abuse detection
-[x] Link detection
-[x] Repeated message detection
-[x] Warning system
-[x] Temporary mute
-[x] Welcome system
-```
-
-## Phase 4: Production
-
-```text
-[ ] GitHub
-[ ] Render deployment
-[ ] Environment variables
-[ ] Production logging
-```
-
-## Phase 5: Database
-
-```text
-[ ] MongoDB
-[ ] User collection
-[ ] Warning history
-[ ] Violation history
-[ ] Moderation logs
-```
-
-## Phase 6: Advanced Moderation
-
-```text
-[ ] Better spam detection
-[ ] Approved links
-[ ] Admin commands
-[ ] User reputation
-[ ] Rate limiting
-```
-
-## Phase 7: AI Moderation
-
-```text
-[ ] Context-aware text moderation
-[ ] AI spam classification
-[ ] Hate/harassment detection
-[ ] Image moderation
-[ ] False-positive protection
-```
-
-## Phase 8: Analytics
-
-```text
-[ ] Admin dashboard
-[ ] Daily statistics
-[ ] User activity
-[ ] Moderation reports
-[ ] Violation analytics
-```
 
 ---
 
-# 🎯 Final Product Vision
+### 🎯 Final Product Vision
 
 The final bot should work like a virtual group moderator:
 
@@ -1113,128 +798,3 @@ The final bot should work like a virtual group moderator:
 `*` Ban should be used only according to the group's rules and admin policy.
 
 ---
-
-# 💡 Important Production Principles
-
-1. Never expose the Telegram Bot Token.
-2. Never upload `.env` to GitHub.
-3. Don't automatically delete every image.
-4. Don't automatically ban users based on one message.
-5. Keep admin users protected from automated moderation where appropriate.
-6. Store warning history in MongoDB for production.
-7. Use AI carefully because AI moderation can make mistakes.
-8. Keep an admin override mechanism.
-9. Log moderation actions.
-10. Test new moderation rules before enabling them for the entire group.
-
----
-
-# 🧪 Production Test Flow
-
-Before calling the project production-ready:
-
-```text
-Normal message
-      ↓
-ALLOW
-
-Useful SSC image
-      ↓
-ALLOW
-
-Spam
-      ↓
-DELETE + WARN
-
-Abusive message
-      ↓
-DELETE + WARN
-
-Repeated spam
-      ↓
-DELETE + WARN
-
-Third violation
-      ↓
-MUTE
-
-Admin message
-      ↓
-IGNORE
-
-New member
-      ↓
-WELCOME
-
-Bot restart
-      ↓
-MongoDB retains history
-```
-
----
-
-# 📌 Current Status
-
-```text
-Bot creation          ✅
-Python integration    ✅
-Telegram integration  ✅
-Group integration     ✅
-Basic moderation      ✅
-Warning system        ✅
-Mute system           ✅
-Local testing         ✅
-
-Production deployment 🔄
-MongoDB               🔜
-AI moderation         🔜
-Image moderation      🔜
-Admin dashboard       🔜
-Advanced analytics    🔜
-```
-
----
-
-# 🚀 Project Evolution
-
-```text
-Simple Telegram Bot
-        ↓
-Group Moderation Bot
-        ↓
-Persistent Moderation Bot
-        ↓
-AI Moderation Bot
-        ↓
-AI Community Manager
-        ↓
-SSC Preparation Assistant
-```
-
-Future SSC features can include:
-
-```text
-📚 Daily Quiz
-🧠 AI Question Explanation
-📝 Mock Tests
-🔥 Daily Motivation
-📊 Student Score
-🏆 Leaderboard
-⏰ Study Reminders
-📖 Study Resources
-🤖 AI Doubt Solver
-```
-
-The long-term vision is to combine:
-
-```text
-Moderation
-+
-SSC Preparation
-+
-AI Assistant
-+
-Student Analytics
-```
-
-into one Telegram-based SSC learning community platform.
